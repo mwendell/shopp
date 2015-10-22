@@ -64,11 +64,13 @@ class ShoppLoginGenerator {
 
 	public static function email_handle () {
 		list($handle, ) = explode('@', $_POST['email']);
+		$handle = str_replace('+', '', $handle);
 		return $handle;
 	}
 
 	public static function email_name () {
-		return $_POST['email'];
+		$email = str_replace('+', '', $_POST['email']);
+		return $email;
 	}
 
 	public static function firstname_lastinitial () {
